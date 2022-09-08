@@ -29,6 +29,7 @@ If the installation was successful, you should be able to run the following comm
     
     $ node index.js [input file path] > [output file path]
     e.g. $ node cli.js SampleData.csv > output.csv
+         $ node.exe cli.js SampleData.csv > output.csv (use this in case the above does not work)
 
 ### Running tests
 
