@@ -4,7 +4,8 @@
   "description": "rotate a table with an identical number of rows and columns",
   "main": "index.js",
   "dependencies": {
-    "csv-parse": "^5.3.0"
+    "csv-parse": "^5.3.0",
+    "fast-csv": "^4.3.6"
   },
   "devDependencies": {
     "jest": "^29.0.2"
