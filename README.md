@@ -2,7 +2,7 @@
 Rotates a table with an identical number of rows and columns.
 
 ---
-## Prerequirements
+## Prerequisites
 
 ### Node & NPM (latest stable version)
   Official Node.js website](https://nodejs.org/).
@@ -28,7 +28,7 @@ If the installation was successful, you should be able to run the following comm
 ### Running the project
     
     $ node index.js [input file path] > [output file path]
-    e.g. $ node index.js input.csv > output.csv
+    e.g. $ node cli.js SampleData.csv > output.csv
 
 ### Running tests
 
