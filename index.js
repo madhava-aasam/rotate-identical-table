@@ -5,7 +5,8 @@ const { getRotatedTableResult, writeToStream } = require("./tableHelper");
 var arguments = process.argv;
 let inputFilePath = arguments[2];
 
-if (!inputFilePath || inputFilePath.substring(0, inputFilePath.length - 3) != "csv") {
+const inputFileExt = inputFilePath.substring(inputFilePath.length - 3, inputFilePath.length);
+if (!inputFilePath || inputFileExt != "csv") {
   console.log("Please input csv file");
   return;
 }
