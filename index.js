@@ -1,17 +1,17 @@
 var fs = require("fs");
 var { parse } = require("csv-parse");
-const { getRotatedTableResult, writeToCsv } = require("./tableHelper");
+const { getRotatedTableResult, writeToStream } = require("./tableHelper");
 
 var arguments = process.argv;
-let filePath = arguments[2];
+let inputFilePath = arguments[2];
 
-if (!filePath || filePath.substring(0, filePath.length - 3) != "csv") {
-  console.log("Please provide input csv file");
+if (!inputFilePath || inputFilePath.substring(0, inputFilePath.length - 3) != "csv") {
+  console.log("Please input csv file");
   return;
 }
 
-const outputData = [];
-fs.createReadStream(filePath)
+const rotatedTablesData = [];
+fs.createReadStream(inputFilePath)
   .pipe(
     parse({
       delimiter: ",",
@@ -20,10 +20,10 @@ fs.createReadStream(filePath)
   .on("data", (dataRow) => {
     // skip file header
     if (dataRow[0] != "id") {
-      const result = getRotatedTableResult(dataRow);
-      outputData.push(result);
+      const rotatedTableData = getRotatedTableResult(dataRow);
+      rotatedTablesData.push(rotatedTableData);
     }
   })
   .on("end", () => {
-    writeToCsv(outputData);
+    writeToStream(rotatedTablesData);
   });

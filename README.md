@@ -1,11 +1,11 @@
 # Rotate identical table
-Rotates a table with an identical number of rows and columns to the right.
+Rotates a table with an identical number of rows and columns.
 
 ---
 ## Prerequirements
 
 ### Node & NPM (latest stable version)
-  official Node.js website](https://nodejs.org/).
+  Official Node.js website](https://nodejs.org/).
 
 If the installation was successful, you should be able to run the following command.
 
@@ -21,13 +21,14 @@ If the installation was successful, you should be able to run the following comm
 ## Commands
 ### Install
 
-    $ git clone https://github.com/YOUR_USERNAME/PROJECT_TITLE
-    $ cd PROJECT_TITLE
+    $ git clone https://github.com/madhava-aasam/rotate-identical-table
+    $ cd rotate-identical-table
     $ npm install
 
 ### Running the project
-
-    $ npm start
+    
+    $ node index.js [input file path] > [output file path]
+    e.g. $ node index.js input.csv > output.csv
 
 ### Running tests
 
@@ -48,11 +49,11 @@ If the installation was successful, you should be able to run the following comm
 ### Completeness
 
 #### Does it handle all the cases, including differing numbers of rows and columns,bigger and smaller tables, error cases you might come up with?
-    Yes
+    It handles all the cases, including differing numbers of rows and columns,bigger and smaller tables. But error cases such as invalid input are not handled. 
 #### For the cases you are handling, are you handling them correctly?
     Yes
 #### How do you know this?
-    I have tested with different input data and also ran unit tests 
+    I have tested with different input data and also ran unit tests (included in the repo). 
 #### Did you test against sample data? If so, please include it alongside your code.
     Yes, included test data in unit tests. Also you can find test data below.
 ##### Input
