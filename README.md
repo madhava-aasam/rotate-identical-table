@@ -27,7 +27,7 @@ If the installation was successful, you should be able to run the following comm
 
 ### Running the project
     
-    $ node index.js [input file path] > [output file path]
+    $ node cli.js [input file path] > [output file path]
     e.g. $ node cli.js SampleData.csv > output.csv
          $ node.exe cli.js SampleData.csv > output.csv (use this in case the above does not work)
 
