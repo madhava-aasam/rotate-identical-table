@@ -143,6 +143,20 @@ const getIdenticalTableTestData = [
       isValid: true,
     },
   },
+  {
+    id: 88,
+    input: [
+      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
+      22, 23, 24, 25,
+    ],
+    expectedOutput: {
+      json: [
+        6, 1, 2, 3, 4, 11, 12, 7, 8, 5, 16, 17, 13, 9, 10, 21, 18, 19, 14, 15,
+        22, 23, 24, 25, 20,
+      ],
+      isValid: true,
+    },
+  },
 ];
 
 describe("getRotatedTableResult tests", () => {
