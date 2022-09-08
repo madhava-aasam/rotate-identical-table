@@ -33,6 +33,8 @@ If the installation was successful, you should be able to run the following comm
 
     $ npm test
 
+--- 
+
 ## What is implemented?
 ### Basics
 
@@ -52,7 +54,7 @@ If the installation was successful, you should be able to run the following comm
 #### How do you know this?
     I have tested with different input data and also ran unit tests 
 #### Did you test against sample data? If so, please include it alongside your code.
-    Yes
+    Yes, included test data in unit tests. Also you can find test data below.
 ##### Input
     id, json
     1, "[1, 2, 3, 4, 5, 6, 7, 8, 9]"

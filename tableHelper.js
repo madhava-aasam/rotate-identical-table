@@ -1,3 +1,5 @@
+const { format } = require('@fast-csv/format');
+
 // Returns - an array of identical number of rows and columns Or false
 function getIdenticalTable(list) {
   let isValid = false,
@@ -18,7 +20,7 @@ function getIdenticalTable(list) {
     }
     return requiredTable;
   } catch (error) {
-    console.error("error in getRotatedTableResult", error);
+    console.error("error in getIdenticalTable", error);
     throw error;
   }
 }
@@ -29,7 +31,7 @@ function doesTableHaveIdenticalRowsAndColumns(tblArray) {
     const isInvalid = tblArray.some((a) => a.length !== tableRows);
     return !isInvalid;
   } catch (error) {
-    console.error("error in getRotatedTableResult", error);
+    console.error("error in doesTableHaveIdenticalRowsAndColumns", error);
     throw error;
   }
 }
@@ -50,7 +52,7 @@ function getTable(list, itemsPerColumn) {
     }
     return table;
   } catch (error) {
-    console.error("error in getRotatedTableResult", error);
+    console.error("error in getTable", error);
     throw error;
   }
 }
@@ -131,7 +133,7 @@ function rotateTable(tbl) {
     }
     return resp;
   } catch (error) {
-    console.error("error in getRotatedTableResult", error);
+    console.error("error in rotateTable", error);
     throw error;
   }
 }
@@ -157,4 +159,22 @@ function getRotatedTableResult(dataRow) {
   }
 }
 
-module.exports = { getRotatedTableResult };
+function writeToCsv(data) {
+  try {
+    const stream = format({ delimiter: "," });
+    stream.pipe(process.stdout);
+    stream.write(["id", "json", "is_valid"]);
+
+    data.forEach(item => {
+      const rotatedItems = "[" + item.json + "]"
+      stream.write([item.id, rotatedItems, item.is_valid])
+    });
+
+    stream.end();
+  } catch (error) {
+    console.log('error in writeToCsv', error);
+    throw error;
+  }
+}
+
+module.exports = { getRotatedTableResult, writeToCsv };
